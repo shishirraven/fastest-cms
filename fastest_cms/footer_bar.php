@@ -235,7 +235,7 @@
 			  	}
 			}).done(function() {
 			  	alert("Added Editable, Page will reload");
-				//location.reload();
+				location.reload();
 			});
 
 
@@ -250,11 +250,9 @@
 				fc_edtable_state = 1;
 			}
 		);
-
-		$('#remove_editable').click(
+		$( document ).on( "click", "#remove_editable",
 			function()
 			{
-				/* */
 				$( "div[data-editable]" ).addClass("border-for-editable");
 				$("#editor_toolbar").hide();
 				$("#fastest-cms-remove-editable-bar").show();
@@ -263,7 +261,7 @@
 			}
 		);
 
-		$( "div[data-editable]" ).one( "click",
+			$( document ).on( "click", "div[data-editable]",
 			function()
 			{
 

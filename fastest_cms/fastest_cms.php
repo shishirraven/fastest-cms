@@ -179,8 +179,12 @@ include_once("simple_html_dom.php");
 				$query_cms_atom_content_pk ="ALTER TABLE `cms_atom_content`
 				  ADD PRIMARY KEY (`id`);
 				";
+
+				$query_cms_atom_content_ai ="ALTER TABLE `cms_atom_content`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;";
 				mysql_query($query_cms_atom_content) or die(mysql_error());
 				mysql_query($query_cms_atom_content_pk) or die(mysql_error());
+				mysql_query($query_cms_atom_content_ai) or die(mysql_error());
 			}
 		}
 
@@ -226,9 +230,6 @@ include_once("simple_html_dom.php");
 			<h2>Wrong Credentails, Try Again. </h2>
 			<?php
 		}
-
-		
-
 
 		?>
 		<style>
@@ -314,23 +315,5 @@ include_once("simple_html_dom.php");
 		</form>
 	<?php
 	}
-
-	static function create_login_form2()
-	{
-	?>
-	<form action="">
-		<h1><i>Fastest</i> CMS Login</h1>
-		<p>Username</p>
-		<input type="text" name="username">
-		<p>Password</p>
-		<input type="text" name="username">
-		<p>
-		<input type="submit">
-		</p>
-	</form>
-	<?php
-	}
-
-
 }
  ?>

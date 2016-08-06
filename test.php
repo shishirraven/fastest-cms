@@ -21,7 +21,9 @@ include("fastest_cms/fastest_cms.php");
     </style>
    </head>
    <body>
-     <h1>Fastst CMS Test</h1>
+     <h1>
+    Fastst CMS Test =dhgdfhds2323
+</h1>
    </body>
 </html>
 <script src="<?php echo BASEURL ?>js/jquery.min.js"></script>
