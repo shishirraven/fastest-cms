@@ -17,18 +17,14 @@ $content = file_get_contents($file_to_make_editable);
 // Create a DOM object from a string
 $html = str_get_html($content);
 
-
-
-$pattern = '/^fastest-cms-id-(.*)/';
-foreach($_POST as $key => $value)
-{
-	preg_match($pattern, $key, $matches);
-	if(count($matches))
+$i=1;
+foreach($html->find('div,p, h1,h2,h3,h4') as $e) {
+	/* The children should not contain any further div's*/
+	if(!$e->find("div"))
 	{
-	/*	// Updating the record into table. 
-		echo $value;
-		echo $matches[1]*/;
-		$html->find("[data-name=".$key."]",0).outertext=$value;
+		$e->setAttribute ( "data-name", "fastest-cms-id".$i );
+		$e->setAttribute ( "data-editable", '' );
+		$i++;
 	}
 }
 $content = tidyHTML($html);

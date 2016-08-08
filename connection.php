@@ -6,7 +6,7 @@ if(!isset($_SESSION))
 }
 mysql_connect("localhost","root","") or die(mysql_error());
 mysql_query('SET CHARACTER SET utf8');
-mysql_select_db("instant_cms") or die(mysql_error());
+mysql_select_db("fastest_cms") or die(mysql_error());
 define("enable_cms",true);
 define("BASEURL","http://localhost/instant_cms/");
 ?>
